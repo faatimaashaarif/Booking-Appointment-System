@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Admin - View Bookings</h1>
+    <a href="/">Back to Booking</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Email</th><th>Resource</th><th>Date</th><th>Time</th><th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for b in bookings %}
+            <tr>
+                <td>{{ b.id }}</td>
+                <td>{{ b.user_name }}</td>
+                <td>{{ b.email }}</td>
+                <td>{{ b.resource }}</td>
+                <td>{{ b.date }}</td>
+                <td>{{ b.time }}</td>
+                <td>{{ b.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/export_json">Export JSON</a>
+</body>
+</html>
